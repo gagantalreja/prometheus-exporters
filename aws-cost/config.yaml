@@ -1,0 +1,16 @@
+port: 9200
+scrape_interval: 1
+project: infra-internal
+role_arn: arn:aws:iam::728921286627:role/infra-internal-admin-caa
+filter: |
+  {
+      "Not": {
+          "Dimensions": {
+              "Key": "RECORD_TYPE",
+              "Values": [
+                  "Credit",
+                  "Enterprise Discount Program Discount"
+              ]
+          }
+      }
+  }
