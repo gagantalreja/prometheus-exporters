@@ -14,7 +14,6 @@ locale.setlocale(locale.LC_ALL, "")
 
 class Constants:
     def __init__(self, config):
-        self.scrape_interval = int(config.get("scrape_interval", 1)) * 86400
         self.port = int(config.get("port", 4298))
 
         self.project = config["project"]
